@@ -12,20 +12,30 @@ gulp.task('start', function () {
 });
 
 gulp.task('copy', function () {
-    gulp.src([vendorSrc('requirejs/require.js')])
-        .pipe(gulp.dest(vendorTar('/requirejs')));
+    //requirejs
+    gulp.src([createPath.bower_components('requirejs/require.js')])
+        .pipe(gulp.dest(createPath.vendor('/requirejs')));
 
-    gulp.src([vendorSrc('text/text.js')])
-        .pipe(gulp.dest(vendorTar('/requirejs-text')));
+    //requirejs-text
+    gulp.src([createPath.bower_components('text/text.js')])
+        .pipe(gulp.dest(createPath.vendor('/requirejs-text')));
 
-    gulp.src([vendorSrc('Template7/dist/*')])
-        .pipe(gulp.dest(vendorTar('/template7')));
+    //template7
+    gulp.src([createPath.bower_components('Template7/dist/*')])
+        .pipe(gulp.dest(createPath.vendor('/template7')));
+
+    //jquery
+    gulp.src([createPath.bower_components('jquery/dist/*')])
+        .pipe(gulp.dest(createPath.vendor('/jquery')));
+
+    // jquery: {pathName: 'jquery', pathValue: 'vendor/jquery/jquery'},
 });
 
-var vendorSrc = function (name) {
-    return 'bower_components/' + name;
-};
-
-var vendorTar = function (name) {
-    return 'src/vendor/' + name;
+var createPath = {
+    bower_components: function (name) {
+        return 'bower_components/' + name;
+    },
+    vendor: function (name) {
+        return 'src/vendor/' + name;
+    }
 };
