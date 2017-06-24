@@ -1,4 +1,4 @@
-var version = "V=1.0.2";
+var version = "VERSION=10010010002";
 var versionEx = "?V=" + version;
 
 var paths = {

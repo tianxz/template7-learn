@@ -7,13 +7,13 @@ define(
         paths.templateEngine.name,
         paths.createModuleTextPath("first/template.html")
     ],
-    function ($, template7, template) {
-        var compiledTemplate = template7.compile(template);
+    function ($, engine, template) {
+        var compiledTemplate = engine.compile(template);
         var context = {
             firstName: 'Vinci',
             lastName: 'Tian'
         };
         var html = compiledTemplate(context);
-        $("body").html(html);
+        $("body").append(html);
     }
 );
