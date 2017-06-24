@@ -1,0 +1,15 @@
+{
+  "name": "template7-learn",
+  "homepage": "https://github.com/tianxz/template7-learn",
+  "authors": [
+    "mt <oc.mt@hotmail.com>"
+  ],
+  "description": "",
+  "main": "src/index.html",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "^2.3.3",
+    "Template7": "template7#^1.2.3",
+    "text": "requirejs-text#^2.0.15"
+  }
+}
